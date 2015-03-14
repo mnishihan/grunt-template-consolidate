@@ -1,6 +1,6 @@
-# grunt-consolidate
+# grunt-template-consolidate
 
-Universal template compiler task for Grunt. It uses [Consolidate](https://github.com/visionmedia/consolidate.js) under the hood.
+Universal template compiler task for Grunt. It uses awesome [Consolidate](https://github.com/visionmedia/consolidate.js) library under the hood.
 
 ## Supported template engines
 
@@ -43,21 +43,19 @@ __NOTE__: you must still install the engines you wish to use, add them to your p
 
 install via npm
 
-    npm install grunt-consolidate
+    npm install grunt-template-consolidate
 
 install the template engine you intend to use. For example, if using Jade:
 
     npm install jade
 
-and in your grunt.js file:
+and in your grunt configuration file:
 
     grunt.loadNpmTasks('grunt-consolidate');
 
 ## Usage
 
-Create a `consolidate` task in your grunt config. And the task will guess the intended template engine based on the `src` filename. Pass the `engine` option to force a specific engine.
-
-When using the [Grunt file format](http://gruntjs.com/configuring-tasks#files), `variables` is required:
+Create a `consolidate` task in your grunt config. And the task will guess the intended template engine based on the `src` file extension. If you want to be explicit about the template engine to be used, you should pass the `engine` option in task or target options, or as an attribute within the target.
 
     grunt.initConfig({
       consolidate: {
@@ -76,7 +74,7 @@ When using the [Grunt file format](http://gruntjs.com/configuring-tasks#files), 
       }
     });
 
-To remain backwards compatible, `src`, `dest` can be used to define files aswell:
+To remain backwards compatible, `src`, `dest` can be used to define files as well:
 
     grunt.initConfig({
       consolidate: {
